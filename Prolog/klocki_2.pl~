@@ -1,0 +1,24 @@
+% PROGRAM: klocki_2
+% Baza wiedzy o uk³adzie klocków
+% Definiowane predykaty:
+% na/2
+%    pod/2
+%   miêdzy/3
+%======================================================
+
+
+% na(X,Y)
+% opis: spe³niony, gdy klocek X le¿y
+% bezpoœrednio na klocku Y
+%  pod(x,Y)
+% opis: spe³niony, gdy klocek X le¿y
+% bezpoœrednio pod klockiem Y
+% miêdzy(X,Y,Z)
+% opis: spe³niony, gdy klocek X le¿y miêdzy
+% klockami Y i Z
+% --------------------------------------------------na/2
+  na(c,a).
+  na(c,b).
+  na(d,c).
+        pod(X,Y):-na(Y,X).
+    miêdzy(X,Y,Z):-na(Z,X),na(X,Y).
